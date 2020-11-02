@@ -74,7 +74,7 @@ export default function htmlToElement(rawHtml, customOpts = {}, done) {
         const customStyle = inheritedStyle(parent);
 
         return (
-          <TextComponent
+          <TextComponent maxFontSizeMultiplier={1}
             {...opts.textComponentProps}
             key={index}
             style={[defaultStyle, customStyle]}
@@ -131,11 +131,11 @@ export default function htmlToElement(rawHtml, customOpts = {}, done) {
           if(!parent){
             listItemPrefix = null;
           } else if (parent.name === 'ol') {
-            listItemPrefix = (<TextComponent style={[defaultStyle, customStyle]}>
+            listItemPrefix = (<TextComponent maxFontSizeMultiplier={1} style={[defaultStyle, customStyle]}>
               {`${orderedListCounter++}. `}
             </TextComponent>);
           } else if (parent.name === 'ul') {
-            listItemPrefix = (<TextComponent style={[defaultStyle, customStyle]}>
+            listItemPrefix = (<TextComponent maxFontSizeMultiplier={1} style={[defaultStyle, customStyle]}>
               {opts.bullet}
             </TextComponent>);
           }
