@@ -131,13 +131,13 @@ export default function htmlToElement(rawHtml, customOpts = {}, done) {
           if(!parent){
             listItemPrefix = null;
           } else if (parent.name === 'ol') {
-            listItemPrefix = (<TextComponent maxFontSizeMultiplier={1} style={[defaultStyle, customStyle]}>
+            listItemPrefix = (<Text maxFontSizeMultiplier={1} style={[defaultStyle, customStyle]}>
               {`${orderedListCounter++}. `}
-            </TextComponent>);
+            </Text>);
           } else if (parent.name === 'ul') {
-            listItemPrefix = (<TextComponent maxFontSizeMultiplier={1} style={[defaultStyle, customStyle]}>
+            listItemPrefix = (<Text maxFontSizeMultiplier={1} style={[defaultStyle, customStyle]}>
               {opts.bullet}
-            </TextComponent>);
+            </Text>);
           }
           if (opts.addLineBreaks && index < list.length - 1) {
             linebreakAfter = opts.lineBreak;
